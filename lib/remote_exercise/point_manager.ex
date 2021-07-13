@@ -39,6 +39,7 @@ defmodule RemoteExercise.PointManager do
     # they will always at minimum be above the max number set. This seems
     # acceptable given the requirements.
     point_state = PointState.randomize_max_number(point_state)
+    Logger.info("Max number is now #{point_state.max_number}")
 
     # A GenServer handles messages sequentially. If we don't start a task,
     # messages will timeout while this large update occurs. From the user's POV
